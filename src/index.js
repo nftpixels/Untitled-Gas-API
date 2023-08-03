@@ -46,7 +46,7 @@ app.get("/claim/:address", async (req, res) => {
 		let retryCount = 0;
 		let distributeResponse;
   
-		while (retryCount < 3) {
+		while (retryCount < 5) {
 		  try {
 			distributeResponse = await Distribute({ address });
 			if (distributeResponse.success) {
@@ -65,8 +65,8 @@ app.get("/claim/:address", async (req, res) => {
 		  }
 		}
   
-		if (retryCount >= 3 && !distributeResponse.success) {
-		  // If the request still fails after 3 retries, return failure response
+		if (retryCount >= 5 && !distributeResponse.success) {
+		  // If the request still fails after 5 retries, return failure response
 		  return {
 			success: false,
 			message: "Gas distribution failed after maximum retries.",
