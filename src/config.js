@@ -2,7 +2,7 @@ const { parseEther } = require("ethers");
 
 require("dotenv").config();
 
-const DISTRIBUTION_VALUE = parseEther("0.000001");
+const DISTRIBUTION_VALUE = parseEther("0.00001");
 const PRIVATE_KEY = process.env.PRIVATE_KEY;
 const RPC_URL = process.env.RPC_URL;
 
