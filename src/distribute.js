@@ -23,7 +23,7 @@ async function Distribute({ address }) {
       transactionHash: transaction.hash
     };
   } catch (error) {
-    // Handle errors here
+    // Handle errors here.. one day..
     return {
       success: false,
       message: "Gas distribution failed.",
